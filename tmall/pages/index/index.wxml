@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+  <view class="header">
+    <view class="htop">
+      <view class="icon-category"></view>
+      <view class="logo-wrapper"><image src="../../assets/images/logo.png" mode="widthFix" class="logo"></image></view>
+      <navigator url="#" class="login">登录</navigator>
+    </view>
+    <view class="hbottom">
+      <image src="../../assets/images/icon-magnifier.png" mode="widthFix" class="magnifier"></image>
+      <input placeholder="搜索商品、品牌" class="search-input" placeholder-class="search-input-placehoder"/>
+    </view>
+  </view>
+  <scroll-view class="main">
+    <view class="nav-entri">
+      <navigator url="#">
+        <image src="../../assets/images/c1.png" mode="widthFix"></image>
+        <text>苏宁易购</text>
+      </navigator>
+      <navigator url="#">
+        <image src="../../assets/images/c2.png" mode="widthFix"></image>
+        <text>天猫超市</text>
+      </navigator>
+      <navigator url="#">
+        <image src="../../assets/images/c3.png" mode="widthFix"></image>
+        <text>天猫国际</text>
+      </navigator>
+      <navigator url="#">
+        <image src="../../assets/images/c4.png" mode="widthFix"></image>
+        <text>聚划算</text>
+      </navigator>
+      <navigator url="#">
+        <image src="../../assets/images/c5.png" mode="widthFix"></image>
+        <text>分类</text>
+      </navigator>
+    </view>
+  </scroll-view>
+</view>
