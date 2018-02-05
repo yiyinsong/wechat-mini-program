@@ -3,6 +3,8 @@
      background-color: #FF0036;
      color: #fff;
      padding: 0 10px 5px;
+     transition: all 300ms;
+     height: 82px;
      .icon-category {
          width: 20px;
          height: 27px;
@@ -12,6 +14,7 @@
      .htop {
          display: flex;
          align-items: center;
+         padding-top: 5px;
      }
      .logo {
          width: 180px;
@@ -19,6 +22,7 @@
      .logo-wrapper {
          flex: 1;
          text-align: center;
+         height: 36px;
      }
      .login {
          font-size: 12px;
@@ -28,10 +32,11 @@
          display: flex;
          align-items: center;
          padding: 5px 10px;
+         transition: all 300ms;
      }
      .magnifier {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
      }
      .search-input {
         font-size: 14px;
@@ -41,6 +46,17 @@
      .search-input-placehoder {
          color: #ccc;
      }
+     &.mini {
+         height: 41px;
+         transition: all 300ms;
+        .logo {
+            display: none;
+        }
+        .hbottom {
+            transform: translateY(-36px);
+            margin: 0 60px;
+        }
+     }
  }
  .nav-entri {
     display: flex;
@@ -48,12 +64,168 @@
     navigator {
         flex: 1;
         text-align: center;
-        margin: 0 10px;
+        padding: 0 10px;
     }
     image {
         width: 100%;
     }
     text {
         font-size: 12px;
+    }
+}
+.swiper {
+    margin: 0 10px;
+}
+.advertisement {
+    margin: 0 10px 10px;
+    .ad-title {
+        display: flex;
+        .ad-sub-text {
+            flex: 1;
+            font-size: 14px;
+            color: #333;
+        }
+        .ad-sub-url {
+            font-size: 12px;
+            color: #999;
+        }
+    }
+    .ad-content {
+        display: flex;
+        margin-top: 10px;
+        .ad-grid-left {
+            width: 40%;
+            position: relative;
+            image {
+                display: block;
+            }
+            .ad-h1 {
+                position: absolute;
+                color: #fff;
+                top: 8%;
+                left: 10%;
+                font-size: 13px;
+            }
+            .ad-h2 {
+                position: absolute;
+                color: #fff;
+                font-size: 12px;
+                left: 10%;
+                top: 20%;
+                &.o2 {
+                    top: 29%;
+                }
+            }
+            .ad-gl-goods {
+                position: absolute;
+                left: 16%;
+                top: 47%;
+                width: 58%;
+                background-color: rgba(0, 0, 0, .05);
+            }
+            .ad-gl-bg {
+                width: 100%;
+            }
+        }
+        .ad-grid-right {
+            width: 60%;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+            .ad-gr-first {
+                display: flex;
+                border-bottom: 1px solid #eee;
+            }
+            .ad-gr-fleft {
+                width: 45%;
+                padding-left: 5%;
+            }
+            .ad-gr-f1 {
+                width: 90%;
+                display: block;
+                margin-top: 15%;
+            }
+            .ad-gr-ftext {
+                color: #999;
+                font-size: 12px;
+            }
+            .ad-gr-f2 {
+                width: 90%;
+                display: block;
+                margin-top: 5%;
+            }
+            .ad-gr-f3 {
+                width: 35%;
+                margin: 7%;
+                image {
+                    width: 100%;
+                }
+            }
+            .ad-gr-bottom {
+                display: flex;
+                .ad-grb-item {
+                    width: 50%;
+                    border-right: 1px solid #eee;
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
+                .ad-grb-i1 {
+                    width: 60%;
+                    display: block;
+                    margin: 15% 0 0 10%;
+                }
+                .ad-grb-text {
+                    font-size: 12px;
+                    color: #999;
+                    margin-left: 10%;
+                    display: block;
+                }
+                .ad-grb-i2 {
+                    width: 40%;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .ad-gr2-item {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            &:last-child {
+                border-bottom: none;
+            }
+            .ad-gr2-ileft {
+                width: 50%;
+                padding: 5% 0 0 5%;
+                image {
+                    width: 60%;
+                    margin-bottom: 5%;
+                }
+                text {
+                    font-size: 12px;
+                    color: #666;
+                    display: block;
+                }
+            }
+            .ad-gr2-iright {
+                width: 50%;
+                image {
+                    width: 80%;
+                    margin-top: 10%;
+                }
+            }
+        }
+        .count-down {
+            display: flex;
+            margin-bottom: 5%;
+            .count-down-time {
+                color: #fff !important;
+                background-color: #333;
+                padding: 0 3px;
+                vertical-align: top;
+            }
+            .count-down-colon {
+                color: #333;
+                vertical-align: top;
+            }
+        }
     }
 }

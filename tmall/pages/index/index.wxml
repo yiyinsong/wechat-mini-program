@@ -1,16 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
-  <view class="header">
+  <view class="header {{headerHeight === 46 ? 'mini' : ''}}">
     <view class="htop">
       <view class="icon-category"></view>
       <view class="logo-wrapper"><image src="../../assets/images/logo.png" mode="widthFix" class="logo"></image></view>
@@ -21,7 +11,7 @@
       <input placeholder="搜索商品、品牌" class="search-input" placeholder-class="search-input-placehoder"/>
     </view>
   </view>
-  <scroll-view class="main">
+  <scroll-view class="main" scroll-y="true" bindscroll="fnBodyScroll" style="height: {{systemInfo.windowHeight - headerHeight}}px;">
     <view class="nav-entri">
       <navigator url="#">
         <image src="../../assets/images/c1.png" mode="widthFix"></image>
@@ -43,6 +33,104 @@
         <image src="../../assets/images/c5.png" mode="widthFix"></image>
         <text>分类</text>
       </navigator>
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" class="swiper" 
+      style="width: {{systemInfo.windowWidth - 20}}px; height: {{(systemInfo.windowWidth - 20) / 2.67}}px;"
+      indicator-color="rgba(255, 255, 255, .6)" indicator-active-color="#fff">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode="widthFix" style="width: {{systemInfo.windowWidth - 20}}px; height: {{(systemInfo.windowWidth - 20) / 2.67}}px;"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    <navigator url="#">
+      <image src="../../assets/images/uploads/ad.png" mode="widthFix" style="width: {{systemInfo.windowWidth}}px;"></image>
+    </navigator>
+    <view class="advertisement">
+      <view class="ad-title">
+        <view class="ad-sub-text">
+          <text>天猫官方直营</text>
+        </view>
+        <view class="ad-sub-url">
+          <text>官方直采·极速物流·售后无忧</text>
+        </view>
+      </view>
+      <view class="ad-content">
+        <view class="ad-grid-left">
+          <navigator url="#">
+            <text class="ad-h1">超值专享·广州</text>
+            <text class="ad-h2">满199减100</text>
+            <text class="ad-h2 o2">新春年货惠</text>
+            <image class="ad-gl-goods" mode="widthFix" src="//gw.alicdn.com/bao/uploaded/i1/725677994/TB2CutUXUsIL1JjSZPiXXXKmpXa_!!725677994.png_160x160Q50s50.jpg_.webp"></image>
+            <image mode="widthFix" src="//img.alicdn.com/tfs/TB1gPU0hgDD8KJjy0FdXXcjvXXa-435-600.jpg" class="ad-gl-bg"></image>
+          </navigator>
+        </view>
+        <view class="ad-grid-right">
+          <navigator url="#" class="ad-gr-first" style="height: {{(systemInfo.windowWidth - 20)*0.4/1.45}}px">
+            <view class="ad-gr-fleft">
+              <image mode="widthFix" src="https://img.alicdn.com/tfs/TB1oTZ0g8fH8KJjy1XbXXbLdXXa-332-56.png_760x760Q50s50.jpg" class="ad-gr-f1"></image>
+              <text class="ad-gr-ftext">官方直采</text>
+              <image mode="widthFix" src="//img.alicdn.com/tfs/TB1gvnsfcLJ8KJjy0FnXXcFDpXa-230-42.png" class="ad-gr-f2"></image>
+            </view>
+            <image mode="widthFix" src="//img.alicdn.com/tfs/TB1vNH2cLjM8KJjSZFyL6RdzVXa_150x150Q50s50.jpg" class="ad-gr-f3"></image>
+          </navigator>
+          <view class="ad-gr-bottom" style="height: {{(systemInfo.windowWidth - 20)*0.4/1.45}}px">
+            <navigator url="#" class="ad-grb-item">
+              <image mode="widthFix" src="//img.alicdn.com/tfs/TB1WlUGaTZRMeJjSsplXXXeqXXa-180-45.png" class="ad-grb-i1"></image>
+              <text class="ad-grb-text">抢券满199减50</text>
+              <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/i2/1910146537/TB1jcl8k8cHL1JjSZJiXXcKcpXa_!!0-item_pic.jpg" class="ad-grb-i2"></image>
+            </navigator>
+            <navigator url="#" class="ad-grb-item">
+              <image mode="widthFix" src="//img.alicdn.com/tfs/TB18yEKaUgQMeJjy0FgXXc5dXXa-180-45.png" class="ad-grb-i1"></image>
+              <text class="ad-grb-text">1640元奢品礼包</text>
+              <image mode="widthFix" src="//gw.alicdn.com/bao/uploaded/i3/2670830951/TB2zuTjeRHH8KJjy0FbXXcqlpXa-2670830951.jpg" class="ad-grb-i2"></image>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="advertisement">
+      <view class="ad-title">
+        <view class="ad-sub-text">
+          <text>品牌活动</text>
+        </view>
+      </view>
+      <view class="ad-content">
+        <view class="ad-grid-left">
+          <navigator url="#">
+            <image mode="widthFix" src="//img.alicdn.com/tfs/TB1gPU0hgDD8KJjy0FdXXcjvXXa-435-600.jpg" class="ad-gl-bg"></image>
+          </navigator>
+        </view>
+        <view class="ad-grid-right">
+          <navigator url="#" style="height: {{(systemInfo.windowWidth - 20)*0.4/1.45}}px" class="ad-gr2-item">
+            <view class="ad-gr2-ileft">
+              <image mode="widthFix" src="//img.alicdn.com/tfs/TB1QYaHm4rI8KJjy0FpXXb5hVXa-225-44.png"></image>
+              <text>优选新品好物</text>
+              <text>今日上新99+</text>
+            </view>
+            <view class="ad-gr2-iright">
+              <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/i1/520557274/TB22tDAlgvD8KJjSsplXXaIEFXa_!!520557274.png"></image>
+            </view>
+          </navigator>
+          <navigator url="#" style="height: {{(systemInfo.windowWidth - 20)*0.4/1.45}}px" class="ad-gr2-item">
+            <view class="ad-gr2-ileft">
+              <image mode="widthFix" src="//img.alicdn.com/tfs/TB1rp.xXuMxLeJjy0FjXXcDbVXa-118-29.png"></image>
+              <view class="count-down">
+                <text class="count-down-time">{{countDown.hour}}</text>
+                <text class="count-down-colon">:</text>
+                <text class="count-down-time">{{countDown.minute}}</text>
+                <text class="count-down-colon">:</text>
+                <text class="count-down-time">{{countDown.second}}</text>
+              </view>
+              <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB1UfDRSFXXXXXQXXXXXXXXXXXX-640-320.png"></image>              
+            </view>
+            <view class="ad-gr2-iright">
+              <image mode="widthFix" src="//gw.alicdn.com/bao/uploaded/i3/0/TB2rKk1XbuWBuNjSszgXXb8jVXa_!!0-juitemmedia.jpg"></image>
+            </view>
+          </navigator>
+        </view>
+      </view>
     </view>
   </scroll-view>
 </view>
