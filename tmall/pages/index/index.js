@@ -38,7 +38,7 @@ Page({
       }
     }, 500);
   },
-  countDown() { 
+  countDown() {
     if(this.data.countDownTime >= 0) {
       this.setData({
         countDown: util.countDownFormatTime(this.data.countDownTime),
@@ -48,5 +48,8 @@ Page({
         this.countDown();
       }, 1000);
     }
+  },
+  fnLoadingMoreProducts() {
+    console.log('滚动到底');
   }
 })

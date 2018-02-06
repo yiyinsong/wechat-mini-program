@@ -11,7 +11,7 @@
       <input placeholder="搜索商品、品牌" class="search-input" placeholder-class="search-input-placehoder"/>
     </view>
   </view>
-  <scroll-view class="main" scroll-y="true" bindscroll="fnBodyScroll" style="height: {{systemInfo.windowHeight - headerHeight}}px;">
+  <scroll-view class="main" scroll-y="true" bindscroll="fnBodyScroll" bindscrolltolower="fnLoadingMoreProducts" style="height: {{systemInfo.windowHeight - headerHeight}}px;">
     <view class="nav-entri">
       <navigator url="#">
         <image src="../../assets/images/c1.png" mode="widthFix"></image>
@@ -129,6 +129,121 @@
               <image mode="widthFix" src="//gw.alicdn.com/bao/uploaded/i3/0/TB2rKk1XbuWBuNjSszgXXb8jVXa_!!0-juitemmedia.jpg"></image>
             </view>
           </navigator>
+        </view>
+        <view class="ad-brand-list">
+          <navigator url="#">
+            <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/bao/upload/TB1sx.4iLxNTKJjy0Fjwu06yVXa.png"></image>
+            <view class="ad-brand-logo">
+              <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB1A096LpXXXXbaXXXXSutbFXXX.jpg"></image>
+            </view>
+          </navigator>
+          <navigator url="#">
+            <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/i3/1614485373/TB2UxrlXSf8F1Jjy0FeXXallpXa_!!1614485373.jpg"></image>
+            <view class="ad-brand-logo">
+              <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB1JUUEIVXXXXcUXVXXSutbFXXX.jpg"></image>
+            </view>
+          </navigator>
+          <navigator url="#">
+            <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/i3/3414372424/TB2xdY5anvI8KJjSspjXXcgjXXa_!!3414372424.png"></image>
+            <view class="ad-brand-logo">
+              <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB10z9yhgoQMeJjy1XaXXcSsFXa_100x150Q50s50.jpg"></image>
+            </view>
+          </navigator>
+          <navigator url="#">
+            <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/bao/upload/TB1XScnk9YH8KJjSspdwu3RgVXa.png"></image>
+            <view class="ad-brand-logo">
+              <image mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB16RGlRpXXXXatXXXXXXXXXXXX_100x150Q50s50.jpg"></image>
+            </view>
+          </navigator>
+          <navigator url="#" class="brand-more">
+            <image mode="widthFix" src="//img.alicdn.com/tfs/TB159g6kZjI8KJjSsppXXXbyVXa-225-300.png_960x960Q50s50.jpg"></image>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class="list">
+      <view class="item" style="height: {{systemInfo.windowWidth * .44 * 1.98}}px">
+        <navigator url="#">
+          <image mode="widthFix" style="width: {{systemInfo.windowWidth * .352}}px" src="//img.alicdn.com/bao/uploaded/i2/763968012/TB2WsXbfEdnpuFjSZPhXXbChpXa_!!763968012.png_300x1000Q50s50.jpg"></image>
+          <image class="item-brand" mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB1EUPwJFXXXXbwXpXXSutbFXXX.jpg_110x10000Q50s50.jpg"></image>
+          <text>飞科剃须刀电动男士刮胡刀全身水洗智能充电式胡须刀正品FS373</text>
+        </navigator>
+        <view class="label">
+          <text>只换不修</text>
+        </view>
+        <view class="price">
+          <text>￥ 99</text>
+          <view>
+            <image mode="widthFix" src="//gw.alicdn.com/tfs/TB13SW3QFXXXXawaXXXXXXXXXXX-108-105.png"></image>
+          </view>
+        </view>
+        <view class="desc">
+          <text class="active">[家用电动剃须刀，解决...]</text>
+          <text>推荐该商品，点击查看</text>
+          <image mode="widthFix" src="https://gw.alicdn.com/tfs/TB1KruLQFXXXXX.XpXXXXXXXXXX-60-57.png"></image>
+        </view>
+      </view>
+      <view class="item" style="height: {{systemInfo.windowWidth * .44 * 1.98}}px">
+        <navigator url="#">
+          <image mode="widthFix" style="width: {{systemInfo.windowWidth * .352}}px" src="//img.alicdn.com/bao/uploaded/i2/763968012/TB2WsXbfEdnpuFjSZPhXXbChpXa_!!763968012.png_300x1000Q50s50.jpg"></image>
+          <image class="item-brand" mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB1EUPwJFXXXXbwXpXXSutbFXXX.jpg_110x10000Q50s50.jpg"></image>
+          <text>飞科剃须刀电动男士刮胡刀全身水洗智能充电式胡须刀正品FS373</text>
+        </navigator>
+        <view class="label">
+          <text>只换不修</text>
+        </view>
+        <view class="price">
+          <text>￥ 99</text>
+          <view>
+            <image mode="widthFix" src="//gw.alicdn.com/tfs/TB13SW3QFXXXXawaXXXXXXXXXXX-108-105.png"></image>
+          </view>
+        </view>
+        <view class="desc">
+          <text class="active">[家用电动剃须刀，解决...]</text>
+          <text>推荐该商品，点击查看</text>
+          <image mode="widthFix" src="https://gw.alicdn.com/tfs/TB1KruLQFXXXXX.XpXXXXXXXXXX-60-57.png"></image>
+        </view>
+      </view>
+      <view class="item" style="height: {{systemInfo.windowWidth * .44 * 1.98}}px">
+        <navigator url="#">
+          <image mode="widthFix" style="width: {{systemInfo.windowWidth * .352}}px" src="//img.alicdn.com/bao/uploaded/i2/763968012/TB2WsXbfEdnpuFjSZPhXXbChpXa_!!763968012.png_300x1000Q50s50.jpg"></image>
+          <image class="item-brand" mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB1EUPwJFXXXXbwXpXXSutbFXXX.jpg_110x10000Q50s50.jpg"></image>
+          <text>飞科剃须刀电动男士刮胡刀全身水洗智能充电式胡须刀正品FS373</text>
+        </navigator>
+        <view class="label">
+          <text>只换不修</text>
+        </view>
+        <view class="price">
+          <text>￥ 99</text>
+          <view>
+            <image mode="widthFix" src="//gw.alicdn.com/tfs/TB13SW3QFXXXXawaXXXXXXXXXXX-108-105.png"></image>
+          </view>
+        </view>
+        <view class="desc">
+          <text class="active">[家用电动剃须刀，解决...]</text>
+          <text>推荐该商品，点击查看</text>
+          <image mode="widthFix" src="https://gw.alicdn.com/tfs/TB1KruLQFXXXXX.XpXXXXXXXXXX-60-57.png"></image>
+        </view>
+      </view>
+      <view class="item" style="height: {{systemInfo.windowWidth * .44 * 1.98}}px">
+        <navigator url="#">
+          <image mode="widthFix" style="width: {{systemInfo.windowWidth * .352}}px" src="//img.alicdn.com/bao/uploaded/i2/763968012/TB2WsXbfEdnpuFjSZPhXXbChpXa_!!763968012.png_300x1000Q50s50.jpg"></image>
+          <image class="item-brand" mode="widthFix" src="//img.alicdn.com/bao/uploaded/TB1EUPwJFXXXXbwXpXXSutbFXXX.jpg_110x10000Q50s50.jpg"></image>
+          <text>飞科剃须刀电动男士刮胡刀全身水洗智能充电式胡须刀正品FS373</text>
+        </navigator>
+        <view class="label">
+          <text>只换不修</text>
+        </view>
+        <view class="price">
+          <text>￥ 99</text>
+          <view>
+            <image mode="widthFix" src="//gw.alicdn.com/tfs/TB13SW3QFXXXXawaXXXXXXXXXXX-108-105.png"></image>
+          </view>
+        </view>
+        <view class="desc">
+          <text class="active">[家用电动剃须刀，解决...]</text>
+          <text>推荐该商品，点击查看</text>
+          <image mode="widthFix" src="https://gw.alicdn.com/tfs/TB1KruLQFXXXXX.XpXXXXXXXXXX-60-57.png"></image>
         </view>
       </view>
     </view>
